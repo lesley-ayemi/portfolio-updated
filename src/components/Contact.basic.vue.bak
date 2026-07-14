@@ -1,0 +1,63 @@
+<script setup>
+const email = 'leeayemi@gmail.com'
+const githubUrl = 'https://github.com/lesley-ayemi'
+const linkedinUrl = 'https://linkedin.com/in/lesleyayemi'
+</script>
+
+<template>
+  <section id="contact">
+    <div class="container">
+      <div class="cmd-header">
+        <span class="prompt">$</span>
+        <span class="cmd">cat</span>
+        <span class="flag">contact.md</span>
+      </div>
+
+      <div class="contact-body card">
+        <h2>Let's talk</h2>
+        <p>
+          Have a role, project, or idea worth discussing? Reach out directly —
+          I'll get back to you within a couple of days.
+        </p>
+
+        <div class="contact-actions">
+          <a class="btn btn-primary" :href="`mailto:${email}`">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+            {{ email }}
+          </a>
+          <a class="btn btn-ghost" :href="githubUrl" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.9c-2.78.62-3.37-1.21-3.37-1.21-.46-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.36 1.12 2.93.85.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.13-4.56-5.03 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05a9.3 9.3 0 015 0c1.9-1.32 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.71 1.03 1.62 1.03 2.73 0 3.91-2.34 4.77-4.57 5.02.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a class="btn btn-ghost" :href="linkedinUrl" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.25h4.5V23H.24V8.25zM8.5 8.25h4.32v2.02h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V23h-4.5v-6.98c0-1.66-.03-3.8-2.32-3.8-2.32 0-2.68 1.81-2.68 3.68V23H8.5V8.25z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+.contact-body {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+}
+
+h2 { font-size: 1.9rem; margin: 0 0 18px; }
+.contact-body p {
+  color: var(--muted);
+  max-width: 44ch;
+  margin: 0 auto 28px;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+</style>
