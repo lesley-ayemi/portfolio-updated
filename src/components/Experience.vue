@@ -1,4 +1,9 @@
 <script setup>
+import { ref } from 'vue'
+
+const initialCount = 4
+const expanded = ref(false)
+
 const roles = [
   {
     hash: 'a3f9c1e',
@@ -120,8 +125,13 @@ const roles = [
         <span class="flag">--oneline --graph experience</span>
       </div>
 
-      <ol class="timeline">
-        <li v-for="r in roles" :key="r.hash" class="entry">
+      <ol class="timeline" :class="{ 'is-expanded': expanded }">
+        <li
+          v-for="(r, i) in roles"
+          :key="r.hash"
+          class="entry"
+          :class="{ 'is-extra': i >= initialCount }"
+        >
           <div class="rail">
             <span class="node"></span>
             <span class="line"></span>
@@ -139,6 +149,10 @@ const roles = [
           </div>
         </li>
       </ol>
+
+      <button v-if="!expanded" type="button" class="load-more btn btn-ghost" @click="expanded = true">
+        load more <span class="count">(+{{ roles.length - initialCount }})</span>
+      </button>
     </div>
   </section>
 </template>
@@ -199,4 +213,20 @@ const roles = [
 
 ul { margin: 0; padding-left: 20px; color: var(--muted); }
 li { margin-bottom: 6px; }
+
+.load-more {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+.load-more .count { color: var(--muted); margin-left: 4px; }
+
+@media (max-width: 720px) {
+  .entry.is-extra { display: none; }
+  .timeline.is-expanded .entry.is-extra { display: grid; }
+  .timeline:not(.is-expanded) .entry:nth-child(4) .line { display: none; }
+
+  .load-more { display: flex; }
+}
 </style>
