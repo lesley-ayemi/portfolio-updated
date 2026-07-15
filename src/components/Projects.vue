@@ -8,7 +8,7 @@ const projects = [
     desc: 'Neurodiverse-centred, cloud-based note-taking platform to improve accessibility and focus for users with ADHD, applying AI summarisation and universal design for learning principles.',
     stack: ['React.js', 'Node.js (AWS Lambda)', 'DynamoDB', 'API Gateway', 'Cognito'],
     demo: '',
-    repo: ''
+    repo: 'https://github.com/lesley-ayemi/adhd-notetaker-system'
   },
   {
     ext: '.sol',
